@@ -99,17 +99,18 @@
 							<warName>ROOT</warName>
 						</configuration>
 					</plugin>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<configuration>
+							<outputDirectory>webapps</outputDirectory>
+							<finalName>ROOT</finalName>
+						</configuration>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
 	</profiles>
 	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+
 </project>

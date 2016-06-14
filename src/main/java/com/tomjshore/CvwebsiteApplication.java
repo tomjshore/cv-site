@@ -4,9 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CvwebsiteApplication {
+public class CvWebsiteApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CvwebsiteApplication.class, args);
+		SpringApplication app = new SpringApplication(CvWebsiteApplication.class);
+		app.run(args);
+		
 	}
 }
