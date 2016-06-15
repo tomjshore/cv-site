@@ -2,12 +2,22 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 # Package Files #
-*.jar *.war *.ear
+*.jar
+*.war
+*.war.original
+*.ear
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+#eclisp files
 target/
 .classpath
 .project
 .settings/
+
+#node npm and bower files
+frontend/node_modules/
+frontend/bower_components/
+frontend/.tmp/
+frontend/dist/
 
