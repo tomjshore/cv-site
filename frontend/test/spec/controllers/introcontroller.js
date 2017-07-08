@@ -16,7 +16,9 @@ describe('Controller: IntrocontrollerCtrl', function () {
 
 		spyOn(factory,'getIntro').and.returnValue(defered.promise);
 		var respond = {
-				intro: '<p>Some text</p>'
+				data:{
+					intro: '<p>Some text</p>'
+				}
 	 	};
 		
 		defered.resolve(respond);
@@ -36,7 +38,9 @@ describe('Controller: IntrocontrollerCtrl', function () {
   it('getIntroMessage returns vaild html when factory works',function(){
 	 //given
 	 	var respond = {
-				intro: '<p>Some text</p>'
+				data:{
+					intro: '<p>Some text</p>'
+				}
 	 	};
 	  
 	 //when

@@ -13,8 +13,8 @@ angular.module('frontendApp')
 	  var contrObject= {
 			  getIntroMessage: function(){
 				  
-				  infoFactory.getIntro().then(function(data){
-						$scope.intro = data.intro;
+				  infoFactory.getIntro().then(function(response){
+						$scope.intro = response.data.intro;
 					},function(error){
 						$scope.intro = '<p>No intro</p>';
 					});
