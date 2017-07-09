@@ -163,12 +163,17 @@ module.exports = function (grunt) {
           src: [
             '.tmp',
             '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git{,*/}*'
+          '!<%= yeoman.dist %>/.git{,*/}*',
+          '../src/main/resources/static/**'
           ]
-        }]
+        }],
+        options: {
+          force: true
+        },
       },
       server: '.tmp'
     },
+
 
     // Add vendor prefixed styles
     postcss: {
@@ -386,7 +391,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+          'styles/fonts/{,*/}*.*',
+     
           ]
         }, {
           expand: true,
@@ -398,6 +404,11 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
+        }, {
+          expand: true,
+          cwd: 'bower_components/font-awesome',
+          src: 'fonts/*',
+          dest: '<%= yeoman.dist %>'
         }]
       },
       styles: {
@@ -405,6 +416,18 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      end:{
+        expand : true,
+        cwd: '<%= yeoman.dist %>',
+        dest: '../src/main/resources/static',
+        src: '**'
+      },
+      cv:{
+        expand : true,
+        cwd: '<%= yeoman.dist %>',
+        dest: '../src/main/resources/static/bob/cv.pdf',
+        src: '../../cv.pdf'
       }
     },
 
@@ -477,7 +500,9 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'copy:end',
+    'copy:cv'
   ]);
 
   grunt.registerTask('default', [
