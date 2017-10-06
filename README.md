@@ -8,31 +8,31 @@ Also install grunt, bower
 
 ## To Test
 To run all javascript tests enter the following
-`
+```
 cd frontend
 npm install
 bower install 
 grunt test
-` 
+```
 For java tests it's 
 `mvn test`
 
 ## To run a preview 
-`
+```
 cd frontend
 npm install
 bower install
 grunt build
 cd ..
 mvn spring-boot:run
-`
+```
 
 ## To build
-`
+```
 cd frontend
 npm install
 bower install
 grunt build
 cd ..
 mvn package
-`
+```
